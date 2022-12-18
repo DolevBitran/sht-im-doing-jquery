@@ -1,3 +1,18 @@
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            resolve(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.error('Error: ', error);
+            reject(error)
+        };
+    })
+}
+
+
 jQuery(() => {
     const rootElement = $('#whatsapp_feature')
     rootElement.load('whatsapp.html', () => {
@@ -40,5 +55,29 @@ jQuery(() => {
         $toggleBtn.on('click', onToggleChatbox)
         $closeBtn.on('click', closeChatbox)
         $actionBtn.on('click', openWhatsappAPI)
+
+
+
+
+        const $imageInput = $('#image-input')
+        const $image = $('.whatsapp__chatbox--header-profile-pic img')
+        $imageInput.on('change', async e => {
+            $image.attr('src', await getBase64(e.target.files[0]))
+        })
+
+        const $nameInput = $('#name-input')
+        const $name = $('.whatsapp__chatbox--header-info_name')
+        $nameInput.on('change', e => {
+            console.log(e.target.value)
+            $name.text(e.target.value)
+        })
+
+        const $statusInput = $('#status-input')
+        const $status = $('.whatsapp__chatbox--header-info_status')
+        $statusInput.on('change', e => {
+            console.log(e.target.value)
+            $status.text(e.target.value)
+        })
+
     })
 })
