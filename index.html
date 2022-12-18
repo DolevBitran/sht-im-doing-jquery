@@ -26,24 +26,39 @@
             כאן תוכל לערוך את הפיצ'ר שמוצג בתחתית העמוד
         </p>
 
+        <span class="input-label">
+            תמונת פרופיל
+        </span>
+        <div class="image-input-container ">
+            גרור או העלה תמונה <button class="upload-btn">העלאה</button>
+            <input id="image-input" type="file" accept="image/png, image/jpeg" />
+
+        </div>
+
+        <span class="input-label">
+            שנה שם
+        </span>
         <div class="text-input-container">
-            שנה שם:
             <input id="name-input" type="text" accept="text" value="דולב ביטרן" />
         </div>
 
+        <span class="input-label">
+            שנה סטטוס
+        </span>
         <div class="text-input-container">
-            שנה סטטוס:
             <input id="status-input" type="text" accept="text" value="בדרך כלל מגיב תוך מספר דקות" />
         </div>
 
+        <span class="input-label">
+            שנה את תוכן ההודעה
+        </span>
         <div class="text-input-container">
-            שנה את תוכן ההודעה:
             <textarea id="message-input" type="textarea" accept="text"
                 oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>שלום,
 איך אוכל לעזור לך ?</textarea>
         </div>
 
-        <div class="image-upload-container">
+        <!-- <div class="image-upload-container">
             <svg id="image-upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -52,9 +67,8 @@
 
             העלה תמונה משלך
 
-            <input id="image-input" type="file" accept="image/png, image/jpeg" />
 
-        </div>
+        </div> -->
 
     </div>
 

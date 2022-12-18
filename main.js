@@ -54,21 +54,29 @@ jQuery(() => {
             window.open('https://api.whatsapp.com/send?phone=972523246333', '_blank');
         }
 
+        const setUploadButton = () => {
+            const $imageUploader = $('.upload-btn')
+            const $imageInput = $('#image-input')
+            const $image = $('.whatsapp__chatbox--header-profile-pic img')
+
+            $imageUploader.on('click', () => $imageInput.trigger('click'))
+            $imageInput.on('click', e => e.stopPropagation())
+            $imageInput.on('change', async e => {
+                $image.attr('src', await getBase64(e.target.files[0]))
+                $('.image-input-container').html(`
+                <img class="image-input-preview" src="${await getBase64(e.target.files[0])}" />
+                ${e.target.files[0].name}
+                <button class="upload-btn">העלאה</button>
+                <input id="image-input" type="file" accept="image/png, image/jpeg" />`)
+                setUploadButton()
+            })
+        }
+
         $toggleBtn.on('click', onToggleChatbox)
         $closeBtn.on('click', closeChatbox)
         $actionBtn.on('click', openWhatsappAPI)
 
-
-
-        const $imageUploader = $('.image-upload-container')
-        const $imageInput = $('#image-input')
-        const $image = $('.whatsapp__chatbox--header-profile-pic img')
-
-        $imageUploader.on('click', () => $imageInput.trigger('click'))
-        $imageInput.on('click', e => e.stopPropagation())
-        $imageInput.on('change', async e => {
-            $image.attr('src', await getBase64(e.target.files[0]))
-        })
+        setUploadButton()
 
         const $nameInput = $('#name-input')
         const $name = $('.whatsapp__chatbox--header-info_name')
