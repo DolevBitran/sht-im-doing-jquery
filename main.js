@@ -30,6 +30,8 @@ jQuery(() => {
                 opacity: 1,
                 top: -25,
             }, 150);
+
+
         }
 
         const closeChatbox = () => {
@@ -80,6 +82,13 @@ jQuery(() => {
         $statusInput.on('change', e => {
             console.log(e.target.value)
             $status.text(e.target.value)
+        })
+
+        const $messageInput = $('#message-input')
+        const $message = $('.whatsapp__chatbox--body-message')
+        $messageInput.on('change', e => {
+            console.log(e.target.value)
+            $message.text(e.target.value)
         })
 
     })

@@ -21,6 +21,28 @@
     <!-- JQuery file -->
     <div id="whatsapp_feature"></div>
     <div class="feature-gui">
+        <h1>פיצ'ר Whatsapp</h1>
+        <p>
+            כאן תוכל לערוך את הפיצ'ר שמוצג בתחתית העמוד
+        </p>
+
+        <div class="text-input-container">
+            שנה שם:
+            <input id="name-input" type="text" accept="text" value="דולב ביטרן" />
+        </div>
+
+        <div class="text-input-container">
+            שנה סטטוס:
+            <input id="status-input" type="text" accept="text" value="בדרך כלל מגיב תוך מספר דקות" />
+        </div>
+
+        <div class="text-input-container">
+            שנה את תוכן ההודעה:
+            <textarea id="message-input" type="textarea" accept="text"
+                oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>שלום,
+איך אוכל לעזור לך ?</textarea>
+        </div>
+
         <div class="image-upload-container">
             <svg id="image-upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -34,15 +56,6 @@
 
         </div>
 
-        <div class="text-input-container">
-            שנה שם:
-            <input id="name-input" type="text" accept="text" />
-        </div>
-
-        <div class="text-input-container">
-            שנה סטטוס:
-            <input id="status-input" type="text" accept="text" />
-        </div>
     </div>
 
 
