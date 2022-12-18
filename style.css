@@ -5,11 +5,69 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #fafafa;
+    background-color: #E7EFFB;
     direction: rtl;
     font-family: 'Rubik', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
+.feature-gui {
+    padding: 40px;
+    border-radius: 6px;
+
+    /* border: 1px solid lightgray; */
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(176, 188, 214, 0.2), 0 6px 20px 0 rgba(176, 188, 214, 0.19);
+}
+
+svg {
+    stroke: lightgray;
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    outline: 2px dashed lightblue;
+    /* outline-offset: -4px; */
+    background-color: rgba(231, 239, 251, 0.3);
+    padding: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: lightgray;
+}
+
+#image-upload-icon {
+    width: 50px;
+}
+
+#image-input {
+    display: none;
+}
+
+.text-input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    margin: 10px;
+}
+
+.text-input-container:has(input:focus-within) {
+    outline: 1px solid lightblue;
+    outline-offset: -1px;
+    background-color: #fff;
+}
+
+.text-input-container input:focus-within {
+    outline: unset;
+}
 
 .whatsapp__wrapper {
     position: fixed;

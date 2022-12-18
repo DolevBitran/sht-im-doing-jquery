@@ -58,9 +58,12 @@ jQuery(() => {
 
 
 
-
+        const $imageUploader = $('.image-upload-container')
         const $imageInput = $('#image-input')
         const $image = $('.whatsapp__chatbox--header-profile-pic img')
+
+        $imageUploader.on('click', () => $imageInput.trigger('click'))
+        $imageInput.on('click', e => e.stopPropagation())
         $imageInput.on('change', async e => {
             $image.attr('src', await getBase64(e.target.files[0]))
         })
