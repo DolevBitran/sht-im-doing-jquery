@@ -17,7 +17,6 @@ body {
 .feature-gui {
     padding: 40px;
     border-radius: 14px;
-
     /* border: 1px solid lightgray; */
     background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(176, 188, 214, 0.2), 0 6px 20px 0 rgba(176, 188, 214, 0.19);
@@ -291,4 +290,12 @@ input {
     font-weight: bold;
     color: #fff;
     cursor: pointer;
+}
+
+.credits {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
 }
