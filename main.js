@@ -24,7 +24,6 @@ jQuery(() => {
         $chatbox.on('click', e => e.stopPropagation())
 
         const openChatbox = () => {
-            $chatbox.css('opacity 0')
             $chatbox.css('display', 'block')
             $chatbox.animate({
                 opacity: 1,
@@ -69,6 +68,7 @@ jQuery(() => {
                 <button class="upload-btn">העלאה</button>
                 <input id="image-input" type="file" accept="image/png, image/jpeg" />`)
                 setUploadButton()
+                openChatbox()
             })
         }
 
@@ -83,6 +83,7 @@ jQuery(() => {
         $nameInput.on('change', e => {
             console.log(e.target.value)
             $name.text(e.target.value)
+            openChatbox()
         })
 
         const $statusInput = $('#status-input')
@@ -90,6 +91,7 @@ jQuery(() => {
         $statusInput.on('change', e => {
             console.log(e.target.value)
             $status.text(e.target.value)
+            openChatbox()
         })
 
         const $messageInput = $('#message-input')
@@ -97,6 +99,7 @@ jQuery(() => {
         $messageInput.on('change', e => {
             console.log(e.target.value)
             $message.text(e.target.value)
+            openChatbox()
         })
 
     })
